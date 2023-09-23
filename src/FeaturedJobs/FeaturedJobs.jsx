@@ -1,22 +1,22 @@
-import { useEffect, useState } from 'react';
-import FeaturedJobsCard from './FeaturedJobsCard';
+import { data } from 'autoprefixer';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import JobsCard from '../JobsCard/JobsCard';
 
 const FeaturedJobs = () => {
   const [jobs, setJobs] = useState();
 
   useEffect(() => {
-    fetch('/public/jobs.json')
+    fetch('jobs.json')
       .then((res) => res.json())
       .then((data) => setJobs(data));
   }, []);
-  console.log(jobs);
+
   return (
     <div className="w-10/12 md:w-9/12 mx-auto my-8">
-      <h1>Jobs: {jobs.length}</h1>
-      {<h1>Bismillah</h1>}
       <div>
         {jobs.map((job) => (
-          <FeaturedJobsCard key={job.id} job={job}></FeaturedJobsCard>
+          <JobsCard key={job.id} job={job}></JobsCard>
         ))}
       </div>
     </div>
