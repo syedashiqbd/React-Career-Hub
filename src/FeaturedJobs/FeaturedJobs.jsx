@@ -4,7 +4,7 @@ import JobsCard from '../JobsCard/JobsCard';
 
 const FeaturedJobs = () => {
   const [jobs, setJobs] = useState();
-  const [dataLength, setDataLength] = useState(2);
+  const [dataLength, setDataLength] = useState(4);
 
   useEffect(() => {
     fetch('jobs.json')
@@ -12,7 +12,7 @@ const FeaturedJobs = () => {
       .then((data) => setJobs(data));
   }, []);
   return (
-    <div className="w-10/12 md:w-9/12 mx-auto my-8">
+    <div className=" my-8">
       <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
         {jobs?.slice(0, dataLength).map((job) => (
           <JobsCard key={job.id} job={job}></JobsCard>

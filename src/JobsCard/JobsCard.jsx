@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
 import { MdLocationOn } from 'react-icons/md';
 import { AiFillDollarCircle, AiOutlineDollarCircle } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const JobsCard = ({ job }) => {
   const {
+    id,
     logo,
     job_title,
     company_name,
@@ -17,7 +19,7 @@ const JobsCard = ({ job }) => {
       <figure className="mt-6 ml-8">
         <img src={logo} alt="" />
       </figure>
-      <div className="card-body">
+      <div className=" flex flex-col p-8 ">
         <h2 className="card-title">{job_title}!</h2>
 
         <p>{company_name}</p>
@@ -41,7 +43,9 @@ const JobsCard = ({ job }) => {
         </div>
 
         <div className="card-actions ">
-          <button className="btn btn-primary">View Details</button>
+          <Link to={`/jobs/${id}`}>
+            <button className="btn btn-primary">View Details</button>
+          </Link>
         </div>
       </div>
     </div>

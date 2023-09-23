@@ -1,6 +1,6 @@
 const Blogs = () => {
   return (
-    <div className="w-10/12 md:w-9/12 mx-auto">
+    <div className="my-10">
       <h1>Blogs information will load here</h1>
     </div>
   );
