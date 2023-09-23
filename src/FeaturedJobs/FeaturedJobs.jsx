@@ -11,11 +11,11 @@ const FeaturedJobs = () => {
       .then((res) => res.json())
       .then((data) => setJobs(data));
   }, []);
-
+  console.log(jobs);
   return (
     <div className="w-10/12 md:w-9/12 mx-auto my-8">
       <div>
-        {jobs.map((job) => (
+        {jobs?.map((job) => (
           <JobsCard key={job.id} job={job}></JobsCard>
         ))}
       </div>
